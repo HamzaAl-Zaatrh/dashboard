@@ -62,7 +62,8 @@ a {
   padding: 15px;
   border-right: solid 1px var(--border-color);
   overflow-x: hidden;
-  overflow-y: auto;
+  /* should be auto */
+  overflow-y: hidden;
 }
 
 .left-section .logo {
@@ -103,6 +104,7 @@ a {
   font-weight: 500;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .left-section nav ul li > span {
@@ -115,8 +117,11 @@ a {
   margin-bottom: 10px;
 }
 
+.left-section nav ul li:hover {
+  background-color: #ebf1fd;
+}
+
 .left-section nav ul li.active {
-  border-radius: 12px;
   background-color: var(--main-color);
 }
 
@@ -213,7 +218,7 @@ a {
 /* content ----------------- */
 
 .right-section .content {
-  overflow: auto;
+  overflow: hidden;
   height: calc(100vh - 60px);
   display: grid;
   grid-template-columns: repeat(4, minmax(280px, 1fr));
@@ -464,4 +469,37 @@ a {
 
 .right-section .content section.response #bars-chart {
   margin-top: 10px;
+}
+
+@keyframes start-up {
+  from {
+    opacity: 0%;
+    transform: translateY(70px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+.a1 {
+  animation-name: start-up;
+  animation-duration: 0.5s;
+}
+.a2 {
+  animation-name: start-up;
+  animation-duration: 1s;
+}
+.a3 {
+  animation-name: start-up;
+  animation-duration: 1.5s;
+}
+.a4 {
+  animation-name: start-up;
+  animation-duration: 2s;
+}
+.a5 {
+  animation-name: start-up;
+  animation-duration: 2.5s;
 }
